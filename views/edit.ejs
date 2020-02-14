@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+<div class="container">
+  <h1>Add a new book</h1>
+<form action="/books/<%= book._id %>?_method=PUT" method="post">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" name="title" id="title" value="<%= book.title %>">
+  </div>
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input type="text" class="form-control" name="author" id="author" value="<%= book.author %>">
+  </div>
+  <div class="form-group">
+    <label for="year">Year Written</label>
+    <input type="text" class="form-control" name="year_written" id="year" value="<%= book.year_written %>">
+  </div>
+  <div class="form-group">
+    <label for="edition">Edition</label>
+    <input type="text" class="form-control" name="edition" id="edition" value="<%= book.edition %>">
+  </div>
+  <div class="form-group">
+    <label for="price">Price</label>
+    <input type="text" class="form-control" name="price" id="price" value="<%= book.price %>">
+  </div>
+  <div class="form-group">
+    <label for="image">Image URL</label>
+    <input type="text" class="form-control" name="image" id="image" value="<%= book.image %>">
+  </div>
+
+<button type="submit" class="btn btn-outline-primary">Submit</button>
+
+</form>
+</div>
+
+<%- include('partials/footer') %>

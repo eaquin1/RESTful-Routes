@@ -81,6 +81,38 @@ app.get('/books/:id', (req, res) =>{
 });
 
 //EDIT ROUTE
+app.get('/books/:id/edit', (req, res) =>{
+  Book.findById(req.params.id, function(err, foundBook){
+    if(err){
+      res.redirect('/books')
+    } else {
+      res.render('edit', {book: foundBook})
+    }
+  })
+})
+
+//UPDATE ROUTE
+app.put('/books/:id', (req, res) => {
+  Book.findByIdAndUpdate(req.params.id, req.body, function(err, updatedBook) {
+    if(err){
+      res.redirect('/books')
+    } else {
+      res.redirect('/books/' + req.params.id)
+    }
+  })
+})
+
+//DELETE ROUTE
+app.delete('/books/:id', (req, res) => {
+  Book.findByIdAndRemove(req.params.id, function(err){
+    if(err) {
+      res.redirect('/books')
+    } else {
+      res.redirect('/books')
+    }
+  })
+});
+
 app.listen(3000, () => {
   console.log("Server is running!");
 })

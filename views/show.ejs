@@ -1,7 +1,6 @@
 <%- include('partials/header') %>
 <div class="row justify-content-center">
 
-
 <div class="card justify-content-center text-center w-50">
   <h5 class="card-header"><%= book.title %></h5>
   <h5 class="card-title">Author: <%= book.author %> </h5>
@@ -12,8 +11,11 @@
   </ul>
   <div class="card-body">
     <p class="card-text"> </p>
-    <a href="/edit" class="btn btn-primary mb-2">Edit Book</a>
     <a href="/books" class="btn btn-primary mb-2">Home</a>
+    <a href="/books/<%= book._id %>/edit" class="btn btn-primary mb-2">Edit Book</a>
+    <form id="delete" action="/books/<%= book._id %>?_method=DELETE" method="POST">
+      <button class="btn btn-danger mb-2">Delete</button>
+    </form>
   </div>
   <img class ="card-img-bottom" src="<%= book.image %>" alt="<%= book.title %>">
 </div>
