@@ -1,0 +1,23 @@
+#header {
+  background: url('https://images.unsplash.com/photo-1573641287741-f6e223d81a0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80');
+}
+
+.card-img-top {
+  height: 420px;
+}
+
+/@media (max-width: 411px) {
+  #index {
+    margin-left: 45px;
+  }
+
+  .jumbotron, nav {
+    width: 414px;
+  }
+}
+
+@media (min-width: 412px) and (max-width: 768px) {
+  #index {
+    margin-left: 220px;
+  }
+} 

@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<div id="index" class="container">
+  <div class="row">
+    <% books.forEach(function(book){ %>
+
+      <div class="col-12 col-lg-4 mb-3 text-center">
+        <div class="card" style="width: 18rem;">
+          <img src="<%= book.image %>" class="card-img-top" alt="<%= book.title %>">
+        <div class="card-body">
+            <h5 class="card-title"><%= book.title %> </h5>
+            <h6 class="card-subtitle mb-2 text-muted">By <%= book.author %></h6>
+            <a href="/books/<%= book._id %>" class="btn btn-outline-success btn-sm">View Information</a>
+        </div>
+      </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
